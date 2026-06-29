@@ -1,0 +1,195 @@
+{
+  "school": {
+    "name": "Школа АП. Гайдара №10",
+    "address": "г. Москва, ул. Ленина, 1",
+    "phone": "+7 (999) 999-99-99",
+    "email": "school1@example.com",
+    "website": "https://school1.example.com",
+    "logo": "https://school1.example.com/logo.png",
+    "favicon": "https://school1.example.com/favicon.ico"
+  },
+  "lessons": {
+    "duration": "00:45",
+    "workWeek": [
+      "Понедельник",
+      "Вторник",
+      "Среда",
+      "Четверг",
+      "Пятница"
+    ],
+    "workWeekend": [
+      "Суббота",
+      "Воскресенье"
+    ]
+  },
+  "system": {
+    "name": "Система 1",
+    "version": "1.0.0",
+    "build": "1234567890",
+    "buildDate": "2021-01-01",
+    "buildTime": "12:00:00",
+    "buildTimestamp": 1611111111111
+  },
+  "soundsSettings": {
+    "volume": 78,
+    "muted": false,
+    "bellDurationSeconds": 20
+  },
+  "bells": [
+    {
+      "id": "96d9bc89-99f0-4700-9d00-5a52c2e84ec5",
+      "name": "bell",
+      "path": "/Users/ung/Documents/scholl-bell/school-bell/public/data/bells/bell.mp3"
+    }
+  ],
+  "streams": [
+    {
+      "name": "Первая смена",
+      "id": "1",
+      "schedule": [
+        {
+          "id": "304e8943-a9c7-4745-a25f-9b6d84d97aaf",
+          "name": "Урок 1",
+          "type": "lesson",
+          "time": "05:00",
+          "end": "",
+          "duration": "00:45",
+          "delaySeconds": 0,
+          "sound": {
+            "id": "96d9bc89-99f0-4700-9d00-5a52c2e84ec5",
+            "name": "bell",
+            "path": "/Users/ung/Documents/scholl-bell/school-bell/public/data/bells/bell.mp3"
+          },
+          "hasStartWarning": false,
+          "startWarningDurationSeconds": 0,
+          "startWarningSound": null
+        },
+        {
+          "id": "5f17c50e-06b4-4b60-8a4a-0b0f1938e19b",
+          "name": "Урок 2",
+          "type": "lesson",
+          "time": "05:50",
+          "end": "",
+          "duration": "00:45",
+          "delaySeconds": 0,
+          "sound": {
+            "id": "96d9bc89-99f0-4700-9d00-5a52c2e84ec5",
+            "name": "bell",
+            "path": "/Users/ung/Documents/scholl-bell/school-bell/public/data/bells/bell.mp3"
+          },
+          "hasStartWarning": false,
+          "startWarningDurationSeconds": 0,
+          "startWarningSound": null
+        },
+        {
+          "id": "74606a51-0701-4610-9800-1e68f7fdebfd",
+          "name": "Урок 3",
+          "type": "lesson",
+          "time": "17:40",
+          "end": "",
+          "duration": "00:10",
+          "delaySeconds": 0,
+          "sound": {
+            "id": "96d9bc89-99f0-4700-9d00-5a52c2e84ec5",
+            "name": "bell",
+            "path": "/Users/ung/Documents/scholl-bell/school-bell/public/data/bells/bell.mp3"
+          },
+          "hasStartWarning": false,
+          "startWarningDurationSeconds": 0,
+          "startWarningSound": null
+        },
+        {
+          "id": "c8e06122-4742-4b96-ae4b-8de11d030c1e",
+          "name": "Перемена 3",
+          "type": "break",
+          "time": "17:50",
+          "end": "",
+          "duration": "00:05",
+          "delaySeconds": 0,
+          "sound": {
+            "id": "96d9bc89-99f0-4700-9d00-5a52c2e84ec5",
+            "name": "bell",
+            "path": "/Users/ung/Documents/scholl-bell/school-bell/public/data/bells/bell.mp3"
+          },
+          "hasStartWarning": false,
+          "startWarningDurationSeconds": 0,
+          "startWarningSound": null
+        },
+        {
+          "id": "93c21ea3-2ca8-4549-8188-53b64b578573",
+          "name": "Урок 4",
+          "type": "lesson",
+          "time": "17:55",
+          "end": "",
+          "duration": "00:10",
+          "delaySeconds": 0,
+          "sound": {
+            "id": "96d9bc89-99f0-4700-9d00-5a52c2e84ec5",
+            "name": "bell",
+            "path": "/Users/ung/Documents/scholl-bell/school-bell/public/data/bells/bell.mp3"
+          },
+          "hasStartWarning": false,
+          "startWarningDurationSeconds": 0,
+          "startWarningSound": null
+        }
+      ]
+    },
+    {
+      "name": "Вторая смена",
+      "id": "2",
+      "schedule": [
+        {
+          "id": "cd8300f5-dea7-403d-9109-6d6315b9fa92",
+          "name": "Урок 1",
+          "type": "lesson",
+          "time": "18:05",
+          "end": "",
+          "duration": "00:10",
+          "delaySeconds": 0,
+          "sound": {
+            "id": "96d9bc89-99f0-4700-9d00-5a52c2e84ec5",
+            "name": "bell",
+            "path": "/Users/ung/Documents/scholl-bell/school-bell/public/data/bells/bell.mp3"
+          },
+          "hasStartWarning": false,
+          "startWarningDurationSeconds": 0,
+          "startWarningSound": null
+        },
+        {
+          "id": "a30fef3c-ad67-41c3-870e-7357cd2abec5",
+          "name": "Перемена 1",
+          "type": "break",
+          "time": "18:15",
+          "end": "",
+          "duration": "00:05",
+          "delaySeconds": 0,
+          "sound": {
+            "id": "96d9bc89-99f0-4700-9d00-5a52c2e84ec5",
+            "name": "bell",
+            "path": "/Users/ung/Documents/scholl-bell/school-bell/public/data/bells/bell.mp3"
+          },
+          "hasStartWarning": false,
+          "startWarningDurationSeconds": 0,
+          "startWarningSound": null
+        },
+        {
+          "id": "ad938c2f-57db-4b03-b22d-0e036eae1024",
+          "name": "Урок 2",
+          "type": "lesson",
+          "time": "18:20",
+          "end": "",
+          "duration": "00:10",
+          "delaySeconds": 0,
+          "sound": {
+            "id": "96d9bc89-99f0-4700-9d00-5a52c2e84ec5",
+            "name": "bell",
+            "path": "/Users/ung/Documents/scholl-bell/school-bell/public/data/bells/bell.mp3"
+          },
+          "hasStartWarning": false,
+          "startWarningDurationSeconds": 0,
+          "startWarningSound": null
+        }
+      ]
+    }
+  ]
+}

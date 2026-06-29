@@ -1,0 +1,144 @@
+.melody-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.melody-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 34px;
+  padding: 0 14px;
+  background: #27272a;
+  color: #a1a1aa;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.melody-btn:hover {
+  background: #3f3f46;
+  color: #fafafa;
+}
+
+.melody-btn--danger {
+  color: #f87171;
+  border-color: #7f1d1d;
+}
+
+.melody-btn--danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+}
+
+.melody-info {
+  font-size: 12px;
+  color: #71717a;
+  background: #09090b;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.melody-info strong {
+  color: #a1a1aa;
+}
+
+.melody-info__selected {
+  color: #60a5fa;
+}
+
+.melody-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.melody-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+  user-select: none;
+}
+
+.melody-item:hover {
+  background: #27272a;
+}
+
+.melody-item--selected {
+  background: rgba(29, 78, 216, 0.1);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.melody-item__icon {
+  color: #52525b;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.melody-item__name {
+  flex: 1;
+  font-size: 13px;
+  color: #a1a1aa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.melody-item--selected .melody-item__name {
+  color: #60a5fa;
+}
+
+.melody-item__actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+
+.melody-item:hover .melody-item__actions {
+  opacity: 1;
+}
+
+.melody-item__play,
+.melody-item__delete {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+
+.melody-item__play {
+  color: #71717a;
+}
+
+.melody-item__play:hover,
+.melody-item__play--active {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+}
+
+.melody-item__delete {
+  color: #71717a;
+}
+
+.melody-item__delete:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}

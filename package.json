@@ -1,0 +1,98 @@
+{
+  "name": "school-bell",
+  "private": true,
+  "version": "0.0.2",
+  "main": "./src/electron/main.ts",
+  "type": "module",
+  "scripts": {
+    "start:react": "vite",
+    "start:electron": "electron .",
+    "start": "concurrently \"npm run start:react\" \"wait-on http://localhost:5173/ && npm run start:electron\"",
+    "build": "tsc -b && vite build",
+    "build:win": "npm run build && cross-env NODE_ENV=production electron-builder --win --x64",
+    "build:win:arm": "npm run build && cross-env NODE_ENV=production electron-builder --win --arm64",
+    "build:mac": "npm run build && cross-env NODE_ENV=production CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --mac",
+    "build:linux": "npm run build && cross-env NODE_ENV=production electron-builder --linux",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "build": {
+    "appId": "com.school.bell",
+    "productName": "Школьные звонки",
+    "npmArgs": [
+      "--legacy-peer-deps"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "src/electron/preload.cjs",
+      "src/services/**/*",
+      "src/electron/ipc.ts",
+      "src/electron/main.ts",
+      "src/shared/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "src/electron/preload.cjs",
+        "to": "preload.cjs"
+      },
+      {
+        "from": "public/data",
+        "to": "data",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "public/icons.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "public/icons.png"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "runAfterFinish": true
+    }
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.3.0",
+    "dotenv": "^17.4.0",
+    "howler": "^2.2.4",
+    "lucide-react": "^1.7.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-draggable-list": "^4.2.1",
+    "react-router-dom": "^7.14.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/howler": "^2.2.12",
+    "@types/node": "^24.12.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^41.1.1",
+    "electron-builder": "^26.8.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.57.0",
+    "vite": "^8.0.1",
+    "wait-on": "^9.0.4"
+  }
+}

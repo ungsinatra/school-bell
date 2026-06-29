@@ -1,0 +1,308 @@
+.lesson-card {
+  background: #18181b;
+  width: 100%;
+  border-radius: 12px;
+  border: 1.5px solid #27272a;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: border-color 0.3s, opacity 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.lesson-card__drag-handle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #52525b;
+  cursor: grab;
+  flex-shrink: 0;
+  padding: 4px 0;
+  touch-action: none;
+  user-select: none;
+}
+
+.lesson-card__drag-handle:hover {
+  color: #a1a1aa;
+}
+
+.lesson-card__drag-handle:active {
+  cursor: grabbing;
+}
+
+.lesson-card__name {
+  margin: 0;
+  font-size: 32px;
+  color:white;
+}
+.lesson-card.lesson {
+  border-color: #1d4ed8;
+  height: 144px;
+}
+
+.lesson-card.break {
+  border-color: #c2410c;
+}
+
+/* Status: past */
+.lesson-card.status-past {
+  opacity: 0.45;
+  border-style: dashed;
+}
+
+.lesson-card.status-past .lesson-card__name,
+.lesson-card.status-past .lesson-card__label {
+  text-decoration: line-through;
+  text-decoration-color: #52525b;
+}
+
+/* Status: active */
+.lesson-card.status-active.lesson {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+  animation: pulse-lesson 2s ease-in-out infinite;
+}
+
+.lesson-card.status-active.break {
+  border-color: #f97316;
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+  animation: pulse-break 2s ease-in-out infinite;
+}
+
+@keyframes pulse-lesson {
+  0%, 100% { box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2); }
+  50%       { box-shadow: 0 0 0 5px rgba(96, 165, 250, 0); }
+}
+
+@keyframes pulse-break {
+  0%, 100% { box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2); }
+  50%       { box-shadow: 0 0 0 5px rgba(249, 115, 22, 0); }
+}
+
+.lesson-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lesson-card__icon.lesson {
+  background: rgba(29, 78, 216, 0.15);
+  color: #60a5fa;
+}
+
+.lesson-card__icon.break {
+  background: rgba(194, 65, 12, 0.15);
+  color: #fb923c;
+}
+
+.lesson-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.lesson-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fafafa;
+  margin: 0;
+}
+
+.lesson-card__fields {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.lesson-card__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.lesson-card__label {
+  font-size: 11px;
+  color: #71717a;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.lesson-card__input {
+  height: 34px;
+  background: #09090b;
+  border: 1px solid #3f3f46;
+  border-radius: 7px;
+  color: #fafafa;
+  font-size: 13px;
+  padding: 0 10px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+.lesson-card__input:focus {
+  border-color: #60a5fa;
+}
+
+/* Base UI Select */
+.lesson-card__placeholder {
+  color: #52525b;
+}
+
+.lesson-card__select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  height: 34px;
+  width: 100%;
+  background: #09090b;
+  border: 1px solid #3f3f46;
+  border-radius: 7px;
+  color: #fafafa;
+  font-size: 13px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.lesson-card__select-trigger:focus-visible {
+  border-color: #60a5fa;
+}
+
+.lesson-card__select-icon {
+  color: #71717a;
+  flex-shrink: 0;
+  transition: transform 0.15s;
+}
+
+.lesson-card__select-trigger[data-popup-open] .lesson-card__select-icon {
+  transform: rotate(180deg);
+}
+
+.lesson-card__select-positioner {
+  z-index: 99999;
+}
+
+.lesson-card__select-popup {
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  padding: 4px;
+  min-width: var(--anchor-width);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  outline: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.lesson-card__select-item {
+  display: flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  color: #a1a1aa;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition: background 0.1s, color 0.1s;
+}
+
+.lesson-card__select-item[data-highlighted] {
+  background: #27272a;
+  color: #fafafa;
+}
+
+.lesson-card__select-item[data-selected] {
+  color: #60a5fa;
+}
+
+.lesson-card__warning {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid #27272a;
+}
+
+.lesson-card__warning-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lesson-card__switch {
+  width: 36px;
+  height: 20px;
+  border-radius: 99px;
+  background: #3f3f46;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.lesson-card__switch[data-checked] {
+  background: oklch(54.6% 0.245 262.881);
+}
+
+.lesson-card__switch-thumb {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.2s;
+}
+
+.lesson-card__switch[data-checked] .lesson-card__switch-thumb {
+  transform: translateX(16px);
+}
+
+.lesson-card__delete {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #71717a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+
+.lesson-card__delete:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.lesson-card__select-empty {
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text);
+  opacity: 0.5;
+  text-align: center;
+}
